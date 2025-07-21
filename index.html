@@ -665,14 +665,10 @@
         detail.addEventListener('mouseleave', () => {
             detail.removeAttribute('open');
         });
+
     });
 
-    allDetails.forEach(detail => {
-        detail.addEventListener('toggle', () => {
-            const anyOpen = Array.from(allDetails).some(d => d.open);
-            header.classList.toggle('header--white', anyOpen);
-        });
-    });
+
 </script>
 
 
