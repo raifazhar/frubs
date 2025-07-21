@@ -690,6 +690,7 @@
 
 <script>
     let cart1 = {
+        id: "button1",
         img: ["https://www.frubs.com/cdn/shop/files/Men_Medical_Scrub_suit_Mossgreen.jpg?v=1749106731&width=720", "https://www.frubs.com/cdn/shop/files/men_wear_moss_green_scrub_suit_with_stethoscope.jpg?v=1749106781&width=720"],
         title: "Relay 5-Pocket Scrub Set",
         price: "Rs.5,999",
@@ -697,6 +698,7 @@
         saleactive: true
     }
     let cart2 = {
+        id: "button2",
         img: ["https://www.frubs.com/cdn/shop/files/Aquamarine_Scrub_set_for_women.jpg?v=1749549781&width=720", "https://www.frubs.com/cdn/shop/files/Frubs_Women_s_Scrub_Set_in_AquaMarine.jpg?v=1749549937&width=720"],
         title: "Finesse 3-Pocket Scrub Set",
         price: "Rs.4,449",
@@ -704,6 +706,7 @@
         saleactive: false
     }
     let cart3 = {
+        id: "button3",
         img: ["https://www.frubs.com/cdn/shop/files/Leatherbackgrey_scrub_top_for_men.jpg?v=1750396077&width=720", "https://www.frubs.com/cdn/shop/files/Leatherbackgrey_men_scrub_top.jpg?v=1750396100"],
         title: "Rene 3-Pocket Scrub Top",
         price: "Rs.1,999",
@@ -711,9 +714,19 @@
         saleactive: false
     }
 
+    const carts = [cart1, cart2, cart3]
+
+
     const button = document.querySelectorAll(".pagination-button-wrapper")
     const overlay = document.getElementById("overlay")
 
+    overlay.addEventListener("click", () => {
+        overlay.style.display = "none";
+
+        document.querySelectorAll(".outer-wrapper.active-card").forEach(wrapper => {
+            wrapper.classList.remove("active-card");
+        });
+    });
     button.forEach(button => {
         const pagination = button.querySelector(".pagination")
         const wrapper = button.querySelector(".outer-wrapper")
@@ -722,36 +735,16 @@
         const imagesecondary = button.querySelector(".image-container .secondary")
         const price = button.querySelector(".price")
         const saleprice = button.querySelector(".saleprice")
-        overlay.addEventListener("click", () => {
-            overlay.style.display = "none";
 
-            document.querySelectorAll(".outer-wrapper.active-card").forEach(wrapper => {
-                wrapper.classList.remove("active-card");
-            });
-        });
         pagination.addEventListener("click", () => {
             overlay.style.display = "block"
-
+            cartData = carts.find(cart => cart.id === pagination.id)
             wrapper.classList.add("active-card")
-            switch (pagination.id) {
-                case "button1":
-                    cartData = cart1;
-                    break;
-                case "button2":
-                    cartData = cart2;
-                    break;
-                case "button3":
-                    cartData = cart3;
-                    break;
-            }
-
             title.textContent = cartData.title
             imageprimary.src = cartData.img[0];
             imagesecondary.src = cartData.img[1]
             price.textContent = cartData.price
             saleprice.textContent = cartData.pricesale;
-
-
         });
     });
 
