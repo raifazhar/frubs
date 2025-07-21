@@ -1,0 +1,111 @@
+.h5 {
+  line-height: 1.3;
+  word-break: break-word;
+  font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 750px) {
+  h5,
+  .h5 {
+    font-size: 1.3rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+summary {
+  position: relative;
+  list-style: none; /* remove triangle */
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.shopsSwiper.swiper {
+  width: 100% !important;
+  height: auto !important;
+  padding-left: 7rem;
+}
+
+.shopsSwiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: blocks;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopsSwiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.shopsSwiper .swiper-button-prev,
+.shopsSwiper .swiper-button-next {
+  display: flex !important;
+  justify-content: center;
+  background: #ececec;
+  border-radius: 15px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.shopsSwiper .swiper-button-prev::after,
+.shopsSwiper .swiper-button-next::after {
+  font-size: 15px !important;
+  color: black;
+}
+
+.shopsSwiper .swiper-button-prev {
+  left: 3rem;
+}
+
+.shopsSwiper .swiper-horizontal > .swiper-pagination-progressbar,
+.shopsSwiper .swiper-pagination-progressbar.swiper-pagination-horizontal {
+  top: unset;
+  bottom: 0;
+  max-width: 90%;
+  margin: 0 auto;
+  right: 0;
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .shopsSwiper .swiper-horizontal > .swiper-pagination-progressbar,
+  .shopsSwiper .swiper-pagination-progressbar.swiper-pagination-horizontal {
+    display: block;
+  }
+  .shopsSwiper
+    .swiper-pagination-progressbar
+    .swiper-pagination-progressbar-fill {
+    background: #302f75;
+  }
+
+  .shopsSwiper .swiper-button-prev,
+  .shopsSwiper .swiper-button-next {
+    display: none !important;
+  }
+  .shopsSwiper {
+    padding-left: 1.6rem !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
