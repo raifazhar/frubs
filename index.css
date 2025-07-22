@@ -732,6 +732,12 @@ footer ul {
   .quick-shop {
     max-width: 100% !important;
   }
+  .quickview {
+    left: 130% !important;
+    bottom: 5%;
+    transform: translate(-66%, 39%);
+    top: unset !important;
+  }
 }
 
 .content-text {
