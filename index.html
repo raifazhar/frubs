@@ -721,10 +721,10 @@
 
     overlay.addEventListener("click", () => {
         overlay.style.display = "none";
-
-        document.querySelectorAll(".outer-wrapper.active-card").forEach(wrapper => {
+        const wrapper = document.querySelector(".outer-wrapper.active-card");
+        if (wrapper) {
             wrapper.classList.remove("active-card");
-        });
+        }
     });
     button.forEach(button => {
         const pagination = button.querySelector(".pagination")
